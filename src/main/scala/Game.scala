@@ -1,6 +1,6 @@
 import utils.MatchStatusEnum
 
-class Game(matches: List[Match]) {
+class Game(matches: List[Match], players: List[Player]) {
 
   def playTournament(): Unit ={
     for(x <- this.matches){
@@ -10,6 +10,8 @@ class Game(matches: List[Match]) {
       var winner = playMatch(x, scala.io.StdIn.readLine()).getWinnerName
       println("Next match")
     }
+    this.players.sortWith(_.getWins() > _.getWins())
+    println(s"The winner is ${this.players(0)}")
   }
   def playMatch(thisMatch: Match, winner: String): Match = winner match {
     case thisMatch.getPlayerOne.nickname => {
