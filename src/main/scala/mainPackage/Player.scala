@@ -17,4 +17,3 @@ class Player(val firstname: String, val surname: String, val nickname: String, a
 object Player{
   def apply(args: List[String]) = new Player(args(0), args(1), args(2), args(3).toInt, args(4).toInt)
 }
-

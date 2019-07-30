@@ -14,5 +14,6 @@ object App {
     )
     writePlayerList(testList, "file")
     println(readPlayerList("file")(0))
+    Menu.startMenu
   }
 }
