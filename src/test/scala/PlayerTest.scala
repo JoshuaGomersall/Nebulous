@@ -11,12 +11,13 @@ class PlayerTest extends FlatSpec with Matchers {
 
   it should "make a new user and display its info" in {
     val playerOne = new Player("john", "smith", "bigbadjohn", 0, 0)
-    assert(() == playerOne.displayInfo())
+    println(playerOne.displayInfo())
+    assert("Firstname:john \nSurname:smith \nNickname:bigbadjohn \nUniquie Code:nhojdabgibhtimsnhoj \nWins:0 \nLoss:0" == playerOne.displayInfo())
   }
 
   it should "make a new user with wins and loss and display its info" in {
     val playerOne = new Player("john", "smith", "bigbadjohn", 4, 2)
-    assert(() == playerOne.displayInfo())
+    assert("Firstname:john \nSurname:smith \nNickname:bigbadjohn \nUniquie Code:nhojdabgibhtimsnhoj \nWins:4 \nLoss:2" == playerOne.displayInfo())
   }
 
 
