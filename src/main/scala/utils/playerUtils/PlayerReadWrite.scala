@@ -1,10 +1,23 @@
-import scala.io.Source
-import java.io.File
-import java.io.PrintWriter
+package utils.playerUtils
 
+import java.io.{File, PrintWriter}
+import mainPackage._
 import scala.collection.mutable.ListBuffer
+import scala.io.Source
 
-object PlayerUtils {
+object PlayerReadWrite {
+
+  def initialisePlayerFile ={
+    val testList = List(
+      new Player("a","a","a" ),
+      new Player("b","b","b" ),
+      new Player("c","c","c" ),
+      new Player("d","d","d" ),
+      new Player("e","e","e" )
+    )
+    writePlayerList(testList, "file")
+  }
+
   def writePlayerList(playerList: List[Player], path: String): Unit ={
     val playerFile = new File(path)
     val playerWriter = new PrintWriter(playerFile)
