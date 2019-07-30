@@ -10,6 +10,14 @@ class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.Value 
     }
   }
 
+  def getPlayerOne: Player = playerOne
+
+  def getPlayerTwo: Player = playerTwo
+
+  def getMatchStatus: MatchStatusEnum.Value = status
+
+  def getWinnerName: String = winnerName
+
   def setWinnerNickname(newWinnerNickname: String): Match = {
     new Match(playerOne, playerTwo, MatchStatusEnum.Ended, newWinnerNickname)
   }
