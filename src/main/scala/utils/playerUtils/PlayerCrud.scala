@@ -1,4 +1,4 @@
-package playerUtils
+package utils.playerUtils
 import mainPackage._
 import PlayerReadWrite._
 
