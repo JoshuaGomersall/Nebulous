@@ -1,3 +1,5 @@
+package utils
+
 object Game {
 
   def startMenu: Unit = {
