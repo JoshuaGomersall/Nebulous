@@ -3,13 +3,14 @@ package mainPackage
 class Player(val firstname: String, val surname: String, val nickname: String, allTimeWins: Int = 0, allTimeLoses: Int = 0) {
 
 
-  val uniquieID = {
+  val uniquieID: String = {
     this.firstname + this.surname + this.nickname
     }.reverse.replace(" ", "")
 
   override def toString: String = "Player(%s,%s,%s,%s,%s)".format(this.firstname, this.surname, this.nickname, this.allTimeWins, this.allTimeLoses)
 
   def displayInfo(): String = {
+    println(s"Firstname:${this.firstname} \nSurname:${this.surname} \nNickname:${this.nickname} \nUniquie Code:${this.uniquieID} \nWins:${this.allTimeWins} \nLoss:${this.allTimeLoses}")
     s"Firstname:${this.firstname} \nSurname:${this.surname} \nNickname:${this.nickname} \nUniquie Code:${this.uniquieID} \nWins:${this.allTimeWins} \nLoss:${this.allTimeLoses}"
   }
 }

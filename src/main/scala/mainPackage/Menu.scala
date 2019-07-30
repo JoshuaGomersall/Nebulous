@@ -10,7 +10,7 @@ object Menu {
       "3 - Leaderboard\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-
+        println("Placeholder")
       case "2" =>
         println("Placeholder")
       case "3" =>
@@ -26,6 +26,7 @@ object Menu {
     println("adding " + number + " players to list")
   }
 
+  @scala.annotation.tailrec
   def playerNo: Int = {
     println("How many players would you like in your tournament?")
     val ans: String = scala.io.StdIn.readLine()

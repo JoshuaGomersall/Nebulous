@@ -1,6 +1,5 @@
-import mainPackage.Match
+import mainPackage.{Match, Player}
 import org.scalatest._
-
 import utils.MatchStatusEnum
 
 class MatchTest extends FlatSpec with Matchers {
