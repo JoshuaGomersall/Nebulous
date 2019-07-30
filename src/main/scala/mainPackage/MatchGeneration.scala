@@ -1,3 +1,5 @@
+package mainPackage
+
 import utils.MatchStatusEnum
 
 import scala.collection.mutable.ListBuffer
