@@ -13,6 +13,10 @@ class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.Value,
       new Match(playerOne, playerTwo, MatchStatusEnum.Ended, newWinnerNickname)
     }
 
+    def setStatus(newStatus: MatchStatusEnum.Value): Match = {
+      new Match(playerOne, playerTwo,newStatus, winnerName)
+    }
+
   }
 
 }
