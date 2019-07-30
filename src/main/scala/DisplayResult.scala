@@ -2,12 +2,13 @@ import scala.io.Source
 
 object DisplayResult {
 
-  val filename = "fileopen.scala"
+  val filename = "file"
 
   val fileContents = Source.fromFile(filename)
-  val displayResult= fileContents.getLines.mkString
+  val displayResult = fileContents.getLines.mkString
   fileContents.close
 
-  println(displayResult)
-
+  def printSimpleResult(unit: Unit): Unit = {
+    println(displayResult)
+  }
 }

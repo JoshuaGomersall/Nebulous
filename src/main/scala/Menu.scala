@@ -1,3 +1,5 @@
+import DisplayResult._
+
 object Menu {
 
   def startMenu: Unit = {
@@ -12,7 +14,7 @@ object Menu {
       case "2" =>
         println("Placeholder")
       case "3" =>
-        println("Placeholder")
+        printSimpleResult()
       case _ =>
         println("Invalid input, try again")
         startMenu
