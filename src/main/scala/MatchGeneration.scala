@@ -12,7 +12,7 @@ object MatchGeneration extends App{
     val filename = "/home/starter/listofplayers.txt"
     for (line <- Source.fromFile(filename).getLines) {
       val player = line.split(" ").toList
-      listOfPlayers addOne Player(player(0),player(1),player(2),0,0)
+      listOfPlayers addOne new Player(player(0),player(1),player(2),0,0)
     }
 
     listOfPlayers
