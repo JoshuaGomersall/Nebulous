@@ -1,6 +1,6 @@
 import utils.MatchStatusEnum
 
-class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.type, winnerName: String) {
+class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.Value, winnerName: String) {
 
   override def toString: String = {
     status match {
@@ -8,6 +8,11 @@ class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.type, 
       case MatchStatusEnum.InProgress => s"Game ${playerOne.nickname} vs ${playerTwo.nickname} is in progress"
       case MatchStatusEnum.Ended => s"Game ${playerOne.nickname} vs ${playerTwo.nickname} has ended. $winnerName won"
     }
+
+    def setWinnerNickname(newWinnerNickname: String): Match = {
+      new Match(playerOne, playerTwo, MatchStatusEnum.Ended, newWinnerNickname)
+    }
+
   }
 
 }
