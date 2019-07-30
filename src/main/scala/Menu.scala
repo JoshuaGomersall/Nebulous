@@ -1,4 +1,4 @@
-object Game {
+object Menu {
 
   def startMenu: Unit = {
     println("Welcome to the Nebulous tournament! \n" +
@@ -13,7 +13,6 @@ object Game {
         println("Placeholder")
       case "3" =>
         println("Placeholder")
-
       case _ =>
         println("Invalid input, try again")
         startMenu
