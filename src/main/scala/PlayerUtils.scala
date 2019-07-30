@@ -18,7 +18,8 @@ object PlayerUtils {
     val file = Source.fromFile(path)
     val playerList : ListBuffer[Player] = ListBuffer.empty
     for(line <- file.getLines().toList){
-      val nextPlayer = Player(line.split(",").toList)
+      val playerArgList = line.dropRight(1).drop(7).split(",").toList
+      val nextPlayer = Player(playerArgList)
       playerList += nextPlayer
     }
     playerList.toList
