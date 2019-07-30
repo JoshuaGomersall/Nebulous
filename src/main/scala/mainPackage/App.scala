@@ -1,4 +1,7 @@
-import PlayerUtils._
+package mainPackage
+
+import playerUtils.PlayerReadWrite.{readPlayerList, writePlayerList}
+
 object App {
 
   def main(args: Array[String]): Unit = {
@@ -13,6 +16,3 @@ object App {
     println(readPlayerList("file")(0))
   }
 }
-
-
-
