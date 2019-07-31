@@ -15,4 +15,9 @@ object PlayerCrud {
     val tempPlayerList = playerList.filterNot(player => player.uniquieID == idToCheck)
     writePlayerList(tempPlayerList, path)
   }
+
+  def updatePlayer(path: String, playerToUpdate: Player): Unit ={
+    removePlayer(path, playerToUpdate)
+    addPlayer(path, playerToUpdate)
+  }
 }
