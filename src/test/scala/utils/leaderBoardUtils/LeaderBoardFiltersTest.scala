@@ -2,7 +2,7 @@ package utils.leaderBoardUtils
 
 import classes.Player
 
-object LeaderBoardFilters {
+object LeaderBoardFiltersTest {
 
 
   def mostWins(list: List[Player]): Unit = {
