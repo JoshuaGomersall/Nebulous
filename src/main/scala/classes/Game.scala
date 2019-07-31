@@ -26,13 +26,11 @@ class Game(matches: List[Match], players: List[Player]) {
     println(winner)
     winner match {
       case thisMatch.playerOne.nickname =>
-        println("Glip")
         thisMatch.getPlayerOne.giveWin()
         thisMatch.getPlayerTwo.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
         thisMatch.playerOne
       case thisMatch.playerTwo.nickname =>
-        println("Glop")
         thisMatch.getPlayerTwo.giveWin()
         thisMatch.getPlayerOne.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerTwo.nickname)
