@@ -2,7 +2,6 @@ package classes
 
 class Player(val firstname: String, val surname: String, val nickname: String, allTimeWins: Int = 0, allTimeLoses: Int = 0) {
 
-
   val uniquieID: String = {
     this.firstname + this.surname + this.nickname
     }.reverse.replace(" ", "")

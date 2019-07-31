@@ -2,6 +2,8 @@ package objects
 
 import classes.Player
 import objects.Leaderboard.printSimpleResult
+import objects.MatchGeneration
+import classes.Game
 
 object Menu {
 
@@ -13,7 +15,8 @@ object Menu {
       "3 - Leaderboard\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        println("Placeholder")
+        val game = new Game(MatchGeneration.matchGeneration.toList, list)
+        game.playTournament()
       case "2" =>
         println("Placeholder")
       case "3" =>
