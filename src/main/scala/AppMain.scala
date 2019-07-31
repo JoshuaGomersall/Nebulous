@@ -1,16 +1,9 @@
 import objects.Menu
-import utils.playerUtils.PlayerReadWrite.{initialisePlayerFile, readPlayerList}
+import utils.playerUtils.PlayerReadWrite._
 
 object AppMain {
 
   def main(args: Array[String]): Unit = {
-    val tempPlayerList = readPlayerList("file")
-    if(tempPlayerList.isEmpty){
-      initialisePlayerFile
-      val playerList = readPlayerList("file")
-    } else {
-      val playerList = tempPlayerList
-    }
-    Menu.startMenu(tempPlayerList)
+    Menu.startMenu(initialisePlayerList)
   }
 }

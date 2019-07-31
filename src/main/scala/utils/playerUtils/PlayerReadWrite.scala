@@ -7,15 +7,22 @@ import scala.io.Source
 
 object PlayerReadWrite {
 
-  def initialisePlayerFile ={
-    val testList = List(
-      new Player("a","a","a" ),
-      new Player("b","b","b" ),
-      new Player("c","c","c" ),
-      new Player("d","d","d" ),
-      new Player("e","e","e" )
-    )
-    writePlayerList(testList, "file")
+  def initialisePlayerList:List[Player] ={
+
+    val tempPlayerList = readPlayerList("file")
+    if(tempPlayerList.isEmpty){
+      val testList = List(
+        new Player("a","a","a" ),
+        new Player("b","b","b" ),
+        new Player("c","c","c" ),
+        new Player("d","d","d" ),
+        new Player("e","e","e" )
+      )
+      writePlayerList(testList, "file")
+      readPlayerList("file")
+    } else {
+      tempPlayerList
+    }
   }
 
   def writePlayerList(playerList: List[Player], path: String): Unit ={
