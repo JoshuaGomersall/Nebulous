@@ -1,26 +1,19 @@
 package utils.playerUtils
 
 import org.scalatest._
-import utils.playerUtils.PlayerReadWrite._
-import classes.Player
-
+import PlayerCrud._
+import classes._
+import utils.playerUtils._
 
 class PlayerCrudTest extends FlatSpec with Matchers {
-  def addPlayer(path: String, newPlayer: Player) {
-    val playerList = readPlayerList(path)
-    val newPlayerList = playerList :+ newPlayer
-    writePlayerList(newPlayerList, path)
-  }
+  
+  it should "add the new player " in {
+    val john = new Player("john" ,"smith" ,"bigbdjohn")
 
-  def removePlayer(path: String, playerToRemove: Player){
-    val playerList: List[Player] = readPlayerList(path)
-    val idToCheck = playerToRemove.uniquieID
-    val tempPlayerList = playerList.filterNot(player => player.uniquieID == idToCheck)
-    writePlayerList(tempPlayerList, path)
-  }
+    PlayerReadWrite.initialisePlayerFile
+    PlayerCrud.addPlayer("file",john)
 
-  def updatePlayer(path: String, playerToUpdate: Player): Unit ={
-    removePlayer(path, playerToUpdate)
-    addPlayer(path, playerToUpdate)
+    println(PlayerReadWrite.readPlayerList("file"))
+    assert("List(Player(a,a,a,0,0), Player(b,b,b,0,0), Player(c,c,c,0,0), Player(d,d,d,0,0), Player(e,e,e,0,0), Player(john,smith,bigbdjohn,0,0))" == PlayerReadWrite.readPlayerList("file").toString() )
   }
 }
