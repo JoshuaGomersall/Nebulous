@@ -2,21 +2,33 @@ package objects
 
 import classes.{Match, Player}
 import utils.MatchStatusEnum
-import utils.playerUtils.PlayerReadWrite._
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 
 object MatchGeneration extends App{
 
+  def readFromFile: ListBuffer[Player] = {
+
+    val listOfPlayers = new ListBuffer[Player]()
+    val filename = "/home/starter/listofplayers.txt"
+    for (line <- Source.fromFile(filename).getLines) {
+      val player = line.split(" ").toList
+      listOfPlayers addOne new Player(player(0),player(1),player(2),0,0)
+    }
+    listOfPlayers
+  }
+
   def matchGeneration = {
 
     val listOfMatches = new ListBuffer[Match]()
 
-    val playerList: List[Player] = readPlayerList("file")
-
-    playerList.zipWithIndex.foreach({ case(x, i) =>
-      playerList.drop(i + 1).foreach(listOfMatches addOne new Match(x, _))})
+    for (i <- 0 until readFromFile.size) {
+      for (j <- i + 1 until readFromFile.size) {
+        listOfMatches addOne new Match(readFromFile(i),readFromFile(j),MatchStatusEnum.WaitingForStart,"")
+        println(new Match(readFromFile(i),readFromFile(j),MatchStatusEnum.WaitingForStart,""))
+      }
+    }
 
     listOfMatches
 
@@ -26,6 +38,6 @@ object MatchGeneration extends App{
 //    matchGeneration.filter(x => x != matchGeneration(i))
 //  }
 
-  println(matchGeneration)
+  matchGeneration
 
 }
