@@ -2,7 +2,7 @@ package objects
 
 import classes.{Match, Player}
 import utils.MatchStatusEnum
-import utils.playerUtils.PlayerReadWrite
+import utils.playerUtils.PlayerReadWrite._
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -25,7 +25,7 @@ object MatchGeneration extends App{
 
     val listOfMatches = new ListBuffer[Match]()
 
-    val playerList: List[Player] = PlayerReadWrite.readPlayerList("file")
+    val playerList: List[Player] = readPlayerList("file")
 
     playerList.zipWithIndex.foreach({ case(x, i) =>
       playerList.drop(i + 1).foreach(listOfMatches addOne new Match(x, _))})
