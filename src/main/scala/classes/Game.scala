@@ -21,11 +21,13 @@ class Game(matches: List[Match], players: List[Player]) {
 
   def playMatch(thisMatch: Match, winner: String): Match = winner match {
    case thisMatch.getPlayerOne.nickname => {
-      //thisMatch.getPlayerOne.giveWin()
+      thisMatch.getPlayerOne.giveWin()
+     thisMatch.getPlayerTwo.giveLose()
       thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
     }
     case thisMatch.getPlayerTwo.nickname  => {
       thisMatch.getPlayerTwo.giveWin()
+      thisMatch.getPlayerOne.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerTwo.nickname)
       }
     case _ => {
