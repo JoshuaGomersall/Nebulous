@@ -15,7 +15,7 @@ object LeaderBoardFilters {
   }
 
   def mostLoses(list: List[Player]): Unit = {
-    println(list.sortBy(_.allTimeWins)(Ordering[Int].reverse).toString)
+    println(list.sortBy(_.allTimeLoses)(Ordering[Int].reverse).toString)
   }
 
 }

@@ -1,7 +1,7 @@
 package objects
 
 import classes.Player
-import objects.LeaderBoard.printSimpleResult
+import objects.LeaderBoard.{leaderBoardMenu}
 import objects.MatchGeneration
 import classes.Game
 
@@ -20,7 +20,7 @@ object Menu {
       case "2" =>
         println("Placeholder")
       case "3" =>
-        printSimpleResult(list)
+        leaderBoardMenu(list)
       case _ =>
         println("Invalid input, try again")
         startMenu(list)
