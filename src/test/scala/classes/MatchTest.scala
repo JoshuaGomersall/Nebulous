@@ -15,7 +15,7 @@ class MatchTest extends FlatSpec with Matchers {
       playerOne,
       playerTwo
     )
-    assert(newMatch.toString === "classes.Game bigbadjohn vs bigbadjohn the second is waiting to be played")
+    assert(newMatch.toString === "Game bigbadjohn vs bigbadjohn the second is waiting to be played")
   }
 
   it should "make a new instance of Match and return correct value from toString when match is in progress" in {
@@ -24,7 +24,7 @@ class MatchTest extends FlatSpec with Matchers {
       playerTwo,
       MatchStatusEnum.InProgress
     )
-    assert(newMatch.toString === "classes.Game bigbadjohn vs bigbadjohn the second is in progress")
+    assert(newMatch.toString === "Game bigbadjohn vs bigbadjohn the second is in progress")
   }
 
   it should "make a new instance of Match and return correct value from toString when game is over" in {
@@ -34,7 +34,7 @@ class MatchTest extends FlatSpec with Matchers {
       MatchStatusEnum.Ended,
       "BigBadJohn the second"
     )
-    assert(newMatch.toString === "classes.Game bigbadjohn vs bigbadjohn the second has ended. BigBadJohn the second won")
+    assert(newMatch.toString === "Game bigbadjohn vs bigbadjohn the second has ended. BigBadJohn the second won")
   }
 
   it should "return player one correctly" in {
