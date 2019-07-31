@@ -18,6 +18,9 @@ class Player(val firstname: String, val surname: String, val nickname: String, v
   def getTournamentWins(): Int = {
     tournamentWins
   }
+  def getNickname(): String = {
+    nickname
+  }
   override def toString: String = "Player(%s,%s,%s,%s,%s)".format(this.firstname, this.surname, this.nickname, this.allTimeWins, this.allTimeLoses)
 
   def displayInfo(): String = {
