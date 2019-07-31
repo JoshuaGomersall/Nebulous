@@ -4,7 +4,7 @@ import classes.Player
 
 import scala.io.Source
 
-object DisplayResult {
+object Leaderboard {
 
   val filename = "file"
 

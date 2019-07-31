@@ -1,4 +1,5 @@
-import classes.{Match, Player}
+package classes
+
 import org.scalatest._
 import utils.MatchStatusEnum
 

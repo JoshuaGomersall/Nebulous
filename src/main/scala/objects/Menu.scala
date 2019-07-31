@@ -1,7 +1,7 @@
 package objects
 
 import classes.Player
-import objects.DisplayResult.printSimpleResult
+import objects.Leaderboard.printSimpleResult
 
 object Menu {
 
