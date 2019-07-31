@@ -1,8 +1,7 @@
-package mainPackage
+import objects.Menu
+import utils.playerUtils.PlayerReadWrite.{initialisePlayerFile, readPlayerList}
 
-import utils.playerUtils.PlayerReadWrite._
-
-object App {
+object AppMain {
 
   def main(args: Array[String]): Unit = {
     val tempPlayerList = readPlayerList("file")

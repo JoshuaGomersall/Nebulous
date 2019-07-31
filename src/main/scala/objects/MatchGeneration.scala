@@ -1,5 +1,6 @@
-package mainPackage
+package objects
 
+import classes.{Match, Player}
 import utils.MatchStatusEnum
 
 import scala.collection.mutable.ListBuffer

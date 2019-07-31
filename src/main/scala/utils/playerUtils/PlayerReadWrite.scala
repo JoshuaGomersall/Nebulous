@@ -1,7 +1,7 @@
 package utils.playerUtils
 
 import java.io.{File, PrintWriter}
-import mainPackage._
+import classes._
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 

@@ -1,5 +1,8 @@
-package mainPackage
-import DisplayResult._
+package objects
+
+import classes.Player
+import objects.DisplayResult.printSimpleResult
+
 object Menu {
 
   def startMenu(list: List[Player]): Unit = {

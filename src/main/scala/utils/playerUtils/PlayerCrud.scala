@@ -1,5 +1,5 @@
 package utils.playerUtils
-import mainPackage._
+import classes._
 import PlayerReadWrite._
 
 object PlayerCrud {

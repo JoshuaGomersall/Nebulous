@@ -1,4 +1,6 @@
-package mainPackage
+package objects
+
+import classes.Player
 
 import scala.io.Source
 
