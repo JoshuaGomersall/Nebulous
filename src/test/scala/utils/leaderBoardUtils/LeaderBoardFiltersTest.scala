@@ -12,4 +12,17 @@ class LeaderBoardFiltersTest extends FlatSpec with Matchers {
   it should "print true as player One's ratio is higher" in{
     assert(true == sortByWinLossRatio(john, john2))
   }
+
+  it should "prints a win/lose ratio Leaderboard" in{
+    assert( "" != LeaderBoardFilters.bestWinLoseRatio(List(john)))
+  }
+
+  it should "prints a most wins Leaderboard" in{
+    assert("" != LeaderBoardFilters.mostWins(List(john)))
+  }
+
+  it should "prints a most losses Leaderboard" in{
+    assert("" != LeaderBoardFilters.mostLoses(List(john)))
+  }
+
 }

@@ -11,7 +11,7 @@ class LeaderBoardTest extends FlatSpec with Matchers {
     assertCompiles("LeaderBoard.leaderBoardMenu")
   }
 
-  it should "display the leaderbard as not empty" in {
+  it should "display the leaderBoard as not empty" in {
     assert( "" != LeaderBoard.printSimpleResult(List(john)))
   }
 
