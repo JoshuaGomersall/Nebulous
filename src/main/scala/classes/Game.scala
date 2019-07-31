@@ -12,14 +12,14 @@ class Game(matches: List[Match], players: List[Player]) {
       x.setStatus(MatchStatusEnum.InProgress)
       println(x.toString)
       println("Type in the winners nickname")
-      var winner = playMatch(x, x.getPlayerOne.getNickname, x.getPlayerTwo.getNickname,  scala.io.StdIn.readLine()).getWinnerName
+      playMatch(x, x.getPlayerOne.getNickname, x.getPlayerTwo.getNickname,  scala.io.StdIn.readLine())
       println("Next match")
     }
     this.players.sortWith(_.getTournamentWins() > _.getTournamentWins())
     println(s"The winner is ${this.players(0)}")
   }
 
-  def playMatch(thisMatch: Match,nick1: String, nick2: String, winner: String): Match = winner match {
+  def playMatch(thisMatch: Match,nickname1: String, nickname2: String, winner: String): Match = winner match {
    case nick1 => {
       thisMatch.getPlayerOne.giveWin()
      thisMatch.getPlayerTwo.giveLose()
