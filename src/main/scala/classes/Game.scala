@@ -20,12 +20,12 @@ class Game(matches: List[Match], players: List[Player]) {
   }
 
   def playMatch(thisMatch: Match,nickname1: String, nickname2: String, winner: String): Match = winner match {
-   case nick1 => {
+   case nickname1 => {
       thisMatch.getPlayerOne.giveWin()
      thisMatch.getPlayerTwo.giveLose()
       thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
     }
-    case nick2  => {
+    case nickname2  => {
       thisMatch.getPlayerTwo.giveWin()
       thisMatch.getPlayerOne.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerTwo.nickname)
@@ -34,7 +34,7 @@ class Game(matches: List[Match], players: List[Player]) {
       println("typing error")
       println(thisMatch.toString)
       println("Type in the winners nickname")
-      playMatch(thisMatch, nick1, nick2, scala.io.StdIn.readLine())
+      playMatch(thisMatch, nickname1, nickname2, scala.io.StdIn.readLine())
     }
   }
 }
