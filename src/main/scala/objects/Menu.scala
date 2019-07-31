@@ -4,7 +4,7 @@ import classes.Player
 import objects.MatchGeneration._
 import utils.playerUtils.PlayerReadWrite._
 import classes.Game
-import objects.Leaderboard._
+import objects.LeaderBoard._
 import utils.playerUtils.PlayerCrud._
 
 object Menu {
@@ -24,7 +24,7 @@ object Menu {
       case "2" =>
         crudMenu
       case "3" =>
-
+        leaderBoardMenu
       case "4" =>
         println("Bye")
         System.exit(1)
