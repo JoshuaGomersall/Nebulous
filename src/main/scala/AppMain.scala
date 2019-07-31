@@ -1,5 +1,4 @@
 import objects.Menu
-import utils.playerUtils.PlayerReadWrite.{initialisePlayerFile, readPlayerList}
 
 object AppMain {
 
