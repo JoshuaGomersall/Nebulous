@@ -9,6 +9,7 @@ import utils.playerUtils.PlayerCrud._
 
 object Menu {
 
+  @scala.annotation.tailrec
   def startMenu: Unit = {
     println("Welcome to the Nebulous tournament! \n" +
       "Please choose what you would like to do: \n" +
@@ -33,6 +34,7 @@ object Menu {
     startMenu
   }
 
+  @scala.annotation.tailrec
   def crudMenu: Unit = {
     println("Please input what would you like to do: \n" +
       "1 - Add Player\n" +
