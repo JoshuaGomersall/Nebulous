@@ -11,6 +11,7 @@ class Player(val firstname: String, val surname: String, val nickname: String, v
   def giveWin()= {
     allTimeWins += 1
     tournamentWins += 1
+    println(tournamentWins)
   }
   def giveLose() = {
     allTimeLoses += 1
