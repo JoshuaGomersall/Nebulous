@@ -24,7 +24,7 @@ class Player(val firstname: String, val surname: String, val nickname: String, v
   override def toString: String = "Player(%s,%s,%s,%s,%s)".format(this.firstname, this.surname, this.nickname, this.allTimeWins, this.allTimeLoses)
 
   def displayInfo(): String = {
-    println(s"Firstname:${this.firstname} \nSurname:${this.surname} \nNickname:${this.nickname} \nUniquie Code:${this.uniquieID} \nWins:${this.allTimeWins} \nLoss:${this.allTimeLoses}")
+    println(s"======================================== \nFirstname:${this.firstname} \nSurname:${this.surname} \nNickname:${this.nickname} \nUniquie Code:${this.uniquieID} \nWins:${this.allTimeWins} \nLoss:${this.allTimeLoses} \n======================================== \n")
     s"Firstname:${this.firstname} \nSurname:${this.surname} \nNickname:${this.nickname} \nUniquie Code:${this.uniquieID} \nWins:${this.allTimeWins} \nLoss:${this.allTimeLoses}"
   }
 }
