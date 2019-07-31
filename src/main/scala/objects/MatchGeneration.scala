@@ -1,11 +1,9 @@
 package objects
 
 import classes.{Match, Player}
-import utils.MatchStatusEnum
 import utils.playerUtils.PlayerReadWrite._
 
 import scala.collection.mutable.ListBuffer
-import scala.io.Source
 
 object MatchGeneration extends App{
 
@@ -21,11 +19,5 @@ object MatchGeneration extends App{
     listOfMatches
 
   }
-
-//  def removeMatch(i: Int) = {
-//    matchGeneration.filter(x => x != matchGeneration(i))
-//  }
-
-  println(matchGeneration)
 
 }
