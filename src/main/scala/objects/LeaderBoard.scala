@@ -15,15 +15,15 @@ object LeaderBoard {
       "4 - Back to Main Menu\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        bestWinLoseRatio((readPlayerList("file")))
+        bestWinLoseRatio(readPlayerList("file"))
         println("\n")
         leaderBoardMenu
       case "2" =>
-        mostWins((readPlayerList("file")))
+        mostWins(readPlayerList("file"))
         println("\n")
         leaderBoardMenu
       case "3" =>
-        mostLoses((readPlayerList("file")))
+        mostLoses(readPlayerList("file"))
         println("\n")
         leaderBoardMenu
       case "4" =>

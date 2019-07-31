@@ -1,8 +1,9 @@
 package utils.leaderBoardUtils
 
 import classes.Player
+import org.scalatest.{FlatSpec, Matchers}
 
-object LeaderBoardFiltersTest {
+object LeaderBoardFiltersTest extends FlatSpec with Matchers {
 
 
   def mostWins(list: List[Player]): Unit = {
