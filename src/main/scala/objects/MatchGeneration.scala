@@ -9,18 +9,6 @@ import scala.io.Source
 
 object MatchGeneration extends App{
 
-//  def readFromFile: ListBuffer[Player] = {
-//
-//    val listOfPlayers = new ListBuffer[Player]()
-//
-//    val filename = "/home/starter/listofplayers.txt"
-//
-//    Source.fromFile(filename).getLines.foreach(p => listOfPlayers addOne new Player(p(0),p(1),p(2),0,0))
-//
-//    listOfPlayers
-//
-//  }
-
   def matchGeneration = {
 
     val listOfMatches = new ListBuffer[Match]()
