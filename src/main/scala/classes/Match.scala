@@ -3,7 +3,7 @@ package classes
 import utils.MatchStatusEnum
 
 
-class Match(playerOne: Player, playerTwo: Player, status: MatchStatusEnum.Value = MatchStatusEnum.WaitingForStart, winnerName: String = "") {
+class Match(val playerOne: Player, val playerTwo: Player, status: MatchStatusEnum.Value = MatchStatusEnum.WaitingForStart, winnerName: String = "") {
 
   override def toString: String = {
     status match {
