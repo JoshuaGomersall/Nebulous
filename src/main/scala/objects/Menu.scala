@@ -1,7 +1,7 @@
 package objects
 
 import classes.Player
-import objects.Leaderboard.printSimpleResult
+import objects.LeaderBoard.printSimpleResult
 import objects.MatchGeneration
 import classes.Game
 
