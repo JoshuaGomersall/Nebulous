@@ -12,5 +12,7 @@ object PlayerCrud {
   def removePlayer(path: String, playerToRemove: Player){
     val playerList: List[Player] = readPlayerList(path)
     val idToCheck = playerToRemove.uniquieID
+    val tempPlayerList = playerList.filterNot(player => player.uniquieID == idToCheck)
+    writePlayerList(tempPlayerList, path)
   }
 }
