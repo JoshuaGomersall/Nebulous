@@ -12,10 +12,17 @@ class Game(matches: List[Match], players: List[Player]) {
       tempMatch.setStatus(MatchStatusEnum.InProgress)
       println(tempMatch.toString)
       println("Type in the winners nickname")
-      playerList += playMatch(tempMatch, tempMatch.getPlayerOne.nickname, tempMatch.getPlayerTwo.nickname, scala.io.StdIn.readLine())
+
+      playerList += playMatch(
+        tempMatch,
+        tempMatch.getPlayerOne.nickname,
+        tempMatch.getPlayerTwo.nickname,
+        scala.io.StdIn.readLine()
+      )
+
       println("Next match")
     })
-    println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}") //This line is broken, need to find teh winnar
+    println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}")
   }
 
 
