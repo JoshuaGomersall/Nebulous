@@ -8,4 +8,9 @@ object PlayerCrud {
     val newPlayerList = playerList :+ newPlayer
     writePlayerList(newPlayerList, path)
   }
+
+  def removePlayer(path: String, playerToRemove: Player){
+    val playerList: List[Player] = readPlayerList(path)
+    val idToCheck = playerToRemove.uniquieID
+  }
 }
