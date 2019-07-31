@@ -1,8 +1,11 @@
-package mainPackage
+package objects
+
+import classes.Player
+import objects.Leaderboard.printSimpleResult
 
 object Menu {
 
-  def startMenu: Unit = {
+  def startMenu(list: List[Player]): Unit = {
     println("Welcome to the Nebulous tournament! \n" +
       "Please choose what you would like to do: \n" +
       "1 - Set up a tournament\n" +
@@ -10,21 +13,23 @@ object Menu {
       "3 - Leaderboard\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        addPlayers(playerNo)
+        println("Placeholder")
       case "2" =>
         println("Placeholder")
       case "3" =>
-        println("Placeholder")
+        printSimpleResult(list)
       case _ =>
         println("Invalid input, try again")
-        startMenu
+        startMenu(list)
     }
+    startMenu(list)
   }
 
   def addPlayers(number: Int): Unit = {
     println("adding " + number + " players to list")
   }
 
+  @scala.annotation.tailrec
   def playerNo: Int = {
     println("How many players would you like in your tournament?")
     val ans: String = scala.io.StdIn.readLine()
