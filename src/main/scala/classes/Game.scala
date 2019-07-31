@@ -1,40 +1,32 @@
 package classes
 
 import utils.MatchStatusEnum
-import scala.collection.mutable.ListBuffer
 
 class Game(matches: List[Match], players: List[Player]) {
 
   def playTournament(): Unit = {
-    var playerList = new ListBuffer[Player]()
-    for (x <- players) {
-      x.newTournamentStart()
-    }
-    for (x <- matches) {
-      x.setStatus(MatchStatusEnum.InProgress)
-      println(x.toString)
+    players.foreach(player => player.newTournamentStart())
+    matches.foreach(tempMatch => {
+      tempMatch.setStatus(MatchStatusEnum.InProgress)
+      println(tempMatch.toString)
       println("Type in the winners nickname")
-      playerList +=  playMatch(x, x.getPlayerOne.nickname, x.getPlayerTwo.nickname, scala.io.StdIn.readLine())
+      playMatch(tempMatch, tempMatch.getPlayerOne.nickname, tempMatch.getPlayerTwo.nickname, scala.io.StdIn.readLine())
       println("Next match")
-    }
-    println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}") //This line is broken, need to find teh winnar
+    })
+    println(s"The winner is ${players(0)}") //This line is broken, need to find teh winnar
   }
 
-  def playMatch(thisMatch: Match, nickname1: String, nickname2: String, winner: String): Player = {
-    println(nickname1)
-    println(nickname2)
-    println(winner)
+
+  def playMatch(thisMatch: Match, nickname1: String, nickname2: String, winner: String): Match = {
     winner match {
       case thisMatch.playerOne.nickname =>
         thisMatch.getPlayerOne.giveWin()
         thisMatch.getPlayerTwo.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
-        thisMatch.playerOne
       case thisMatch.playerTwo.nickname =>
         thisMatch.getPlayerTwo.giveWin()
         thisMatch.getPlayerOne.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerTwo.nickname)
-        thisMatch.playerTwo
       case _ =>
         println("typing error")
         println(thisMatch.toString)
