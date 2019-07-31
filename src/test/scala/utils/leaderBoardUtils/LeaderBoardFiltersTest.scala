@@ -1,33 +1,15 @@
 package utils.leaderBoardUtils
 
 import classes.Player
+import org.scalatest.{FlatSpec, Matchers}
+import LeaderBoardFilters._
 
-object LeaderBoardFiltersTest {
+class LeaderBoardFiltersTest extends FlatSpec with Matchers {
 
+  val john = new Player("john" ,"smith" ,"bigbdjohn", 6, 1)
+  val john2 = new Player("john" ,"smith" ,"bigbdjohn",5,4)
 
-  def mostWins(list: List[Player]): Unit = {
-    println(list.sortBy(r => (-r.allTimeWins, r.allTimeLoses)).foreach(_.displayInfo()))
-
+  it should "print true as player One's ratio is higher" in{
+    assert(true == sortByWinLossRatio(john, john2))
   }
-
-  def bestWinLoseRatio(list: List[Player]): Unit = {
-    println(list.sortWith((playerOne, playerTwo) => sortByWinLossRatio(playerOne, playerTwo)).foreach(_.displayInfo()))
-  }
-
-  def mostLoses(list: List[Player]): Unit = {
-    println(list.sortBy(r => (-r.allTimeLoses, r.allTimeWins )).foreach(_.displayInfo()))
-  }
-
-  def sortByWinLossRatio(playerOne: Player, playerTwo: Player): Boolean = {
-
-    (playerOne.allTimeWins, playerOne.allTimeLoses, playerTwo.allTimeWins,  playerTwo.allTimeLoses) match {
-      case (0,0,_,_) => false
-      case (_,_,0,0) => true
-      case (_,0,_,0) => playerOne.allTimeWins > playerTwo.allTimeWins
-      case (_,0,_,_) => true
-      case (_,_,_,0) => false
-      case _ => (playerOne.allTimeWins / playerOne.allTimeLoses) > (playerTwo.allTimeWins / playerTwo.allTimeLoses)
-    }
-  }
-
 }
