@@ -1,48 +1,53 @@
 package objects
 
 import classes.Player
-import objects.Leaderboard.printSimpleResult
-import objects.MatchGeneration
+import objects.MatchGeneration._
+import utils.playerUtils.PlayerReadWrite._
 import classes.Game
 
 object Menu {
 
-  def startMenu(list: List[Player]): Unit = {
+  def startMenu: Unit = {
     println("Welcome to the Nebulous tournament! \n" +
       "Please choose what you would like to do: \n" +
       "1 - Set up a tournament\n" +
       "2 - Manage players\n" +
-      "3 - Leaderboard\n")
+      "3 - Leaderboard\n" +
+      "4 - Exit\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        val game = new Game(MatchGeneration.matchGeneration.toList, list)
-        game.playTournament()
+        new Game(matchGeneration.toList, readPlayerList("file")).playTournament()
+        println("The tournament is done!")
       case "2" =>
-        println("Placeholder")
+        crudMenu
       case "3" =>
-        printSimpleResult(list)
+      //printSimpleResult()
+      case "4" =>
+        println("Bye")
+        System.exit(1)
       case _ =>
         println("Invalid input, try again")
-        startMenu(list)
     }
-    startMenu(list)
+    startMenu
   }
 
-  def addPlayers(number: Int): Unit = {
-    println("adding " + number + " players to list")
-  }
-
-  @scala.annotation.tailrec
-  def playerNo: Int = {
-    println("How many players would you like in your tournament?")
-    val ans: String = scala.io.StdIn.readLine()
-    toInt(ans).getOrElse(-1) match {
-      case -1 =>
-        println("Invalid input, try again")
-        playerNo
+  def crudMenu: Unit = {
+    println("Please input what would you like to do: \n" +
+      "1 - Add Player\n" +
+      "2 - Remove Player\n" +
+      "3 - Update Player\n" +
+      "4 - Exit\n")
+    scala.io.StdIn.readLine() match {
+      case "1" =>
+      case "2" =>
+      case "3" =>
+      case "4" =>
+        println("Bye")
+        System.exit(1)
       case _ =>
-        ans.toInt
+        println("Invalid input, try again")
     }
+    crudMenu
   }
 
   def toInt(s: String): Option[Int] = {
