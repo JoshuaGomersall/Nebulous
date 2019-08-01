@@ -17,5 +17,4 @@ class GameTest extends FlatSpec with Matchers{
     val game = new Game(matches, playerList)
     assert(playerTwo == game.playMatch(matchOne, playerOne.nickname, playerTwo.nickname, winner="bigbadjohn the second"))
   }
-
 }
