@@ -8,7 +8,6 @@ import objects.LeaderBoard._
 import utils.playerUtils.PlayerCrud._
 
 object UserInterface {
-
   def startMenu: String = {
     println("Welcome to the Nebulous tournament! \n" +
       "Please choose what you would like to do: \n" +

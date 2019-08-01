@@ -15,5 +15,4 @@ class UserInterfaceTest extends FlatSpec with Matchers {
       assert("Bye" == UserInterface.startMenu)
     }
   }
-
 }
