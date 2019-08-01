@@ -7,7 +7,7 @@ import classes.Game
 import objects.LeaderBoard._
 import utils.playerUtils.PlayerCrud._
 
-object Menu {
+object UserInterface {
 
   def startMenu: String = {
     println("Welcome to the Nebulous tournament! \n" +

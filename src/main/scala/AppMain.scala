@@ -1,8 +1,8 @@
-import objects.Menu
+import objects.UserInterface
 
 object AppMain {
 
   def main(args: Array[String]): Unit = {
-    Menu.startMenu
+    UserInterface.startMenu
   }
 }

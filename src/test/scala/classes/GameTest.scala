@@ -1,7 +1,7 @@
 package classes
 import java.io.ByteArrayInputStream
 
-import objects.Menu
+import objects.UserInterface
 import org.scalatest._
 
 class GameTest extends FlatSpec with Matchers{
