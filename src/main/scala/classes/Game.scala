@@ -1,40 +1,48 @@
 package classes
 
 import utils.MatchStatusEnum
+import scala.collection.mutable.ListBuffer
 
 class Game(matches: List[Match], players: List[Player]) {
 
-  def playTournament(): Unit ={
-    for(x <- players){
-      x.newTournamentStart()
-    }
-    for(x <- this.matches){
-      x.setStatus(MatchStatusEnum.InProgress)
-      println(x.toString)
+  def playTournament(): Unit = {
+    val playerList = new ListBuffer[Player]()
+    players.foreach(player => player.newTournamentStart())
+    matches.foreach(tempMatch => {
+      tempMatch.setStatus(MatchStatusEnum.InProgress)
+      println(tempMatch.toString)
       println("Type in the winners nickname")
-      playMatch(x, x.getPlayerOne.getNickname, x.getPlayerTwo.getNickname,  scala.io.StdIn.readLine())
+
+      playerList += playMatch(
+        tempMatch,
+        tempMatch.getPlayerOne.nickname,
+        tempMatch.getPlayerTwo.nickname,
+        scala.io.StdIn.readLine()
+      )
+
       println("Next match")
-    }
-    this.players.sortWith(_.getTournamentWins() > _.getTournamentWins())
-    println(s"The winner is ${this.players(0)}")
+    })
+    println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}")
   }
 
-  def playMatch(thisMatch: Match,nickname1: String, nickname2: String, winner: String): Match = winner match {
-   case nickname1 => {
-      thisMatch.getPlayerOne.giveWin()
-     thisMatch.getPlayerTwo.giveLose()
-      thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
-    }
-    case nickname2  => {
-      thisMatch.getPlayerTwo.giveWin()
-      thisMatch.getPlayerOne.giveLose()
+
+  def playMatch(thisMatch: Match, nickname1: String, nickname2: String, winner: String): Player = {
+    winner match {
+      case thisMatch.playerOne.nickname =>
+        thisMatch.getPlayerOne.giveWin()
+        thisMatch.getPlayerTwo.giveLose()
+        thisMatch.setWinnerNickname(thisMatch.getPlayerOne.nickname)
+        thisMatch.playerOne
+      case thisMatch.playerTwo.nickname =>
+        thisMatch.getPlayerTwo.giveWin()
+        thisMatch.getPlayerOne.giveLose()
         thisMatch.setWinnerNickname(thisMatch.getPlayerTwo.nickname)
-      }
-    case _ => {
-      println("typing error")
-      println(thisMatch.toString)
-      println("Type in the winners nickname")
-      playMatch(thisMatch, nickname1, nickname2, scala.io.StdIn.readLine())
+        thisMatch.playerTwo
+      case _ =>
+        println("typing error")
+        println(thisMatch.toString)
+        println("Type in the winners nickname")
+        playMatch(thisMatch, nickname1, nickname2, scala.io.StdIn.readLine())
     }
   }
 }
