@@ -5,13 +5,12 @@ import utils.playerUtils.PlayerReadWrite._
 
 import scala.collection.mutable.ListBuffer
 
-object MatchGeneration extends App{
+object MatchGeneration{
 
-  def matchGeneration = {
+  def matchGeneration (file: String = "file") :ListBuffer[Match] = {
 
     val listOfMatches = new ListBuffer[Match]()
-
-    val playerList: List[Player] = readPlayerList("file")
+    val playerList: List[Player] = readPlayerList(file)
 
     playerList.zipWithIndex.foreach({ case(x, i) =>
       playerList.drop(i + 1).foreach(listOfMatches addOne new Match(x, _))})

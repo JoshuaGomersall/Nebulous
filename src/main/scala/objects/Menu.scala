@@ -18,7 +18,7 @@ object Menu {
       "4 - Exit\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        new Game(matchGeneration.toList, readPlayerList("file")).playTournament()
+        new Game(matchGeneration("file").toList, readPlayerList("file")).playTournament()
         println("The tournament is done!")
         startMenu
       case "2" =>
