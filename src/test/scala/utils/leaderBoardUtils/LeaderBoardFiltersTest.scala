@@ -28,6 +28,10 @@ class LeaderBoardFiltersTest extends FlatSpec with Matchers {
     assert(sortByWinLossRatio(john5, john3))
   }
 
+  it should "return false as player 2 has 0 loss games" in{
+    assert(!sortByWinLossRatio(john2, john5))
+  }
+
   it should "print true as player 1 has 0 loss " in{
     assert(sortByWinLossRatio(john5, john))
   }
