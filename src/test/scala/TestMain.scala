@@ -1,4 +1,4 @@
-import objects.Menus
+import objects.UserInterface
 import utils.playerUtils.PlayerReadWrite.{initialisePlayerFile, readPlayerList}
 
 object TestMain {
