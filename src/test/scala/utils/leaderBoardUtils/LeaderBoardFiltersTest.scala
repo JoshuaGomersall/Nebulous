@@ -13,23 +13,23 @@ class LeaderBoardFiltersTest extends FlatSpec with Matchers {
   val john5 = new Player("john" ,"smith" ,"bigbdjohn", 6, 0)
 
   it should "print true as player One's ratio is higher" in{
-    assert(true == sortByWinLossRatio(john, john2))
+    assert(sortByWinLossRatio(john, john2))
   }
 
   it should "return true as player 2 is a new player and player 1 is not" in{
-    assert(true == sortByWinLossRatio(john3, john4))
+    assert(sortByWinLossRatio(john3, john4))
   }
 
   it should "return false as player 2 is not a new player and player 1 is" in{
-    assert(false == sortByWinLossRatio(john4 ,john3))
+    assert(!sortByWinLossRatio(john4, john3))
   }
 
   it should "print true as player 1 has more wins than player 2" in{
-    assert(true == sortByWinLossRatio(john5 ,john3))
+    assert(sortByWinLossRatio(john5, john3))
   }
 
   it should "print true as player 1 has 0 loss " in{
-    assert(true == sortByWinLossRatio(john5 ,john))
+    assert(sortByWinLossRatio(john5, john))
   }
 
   it should "run the command and displays who has the most wins" in{

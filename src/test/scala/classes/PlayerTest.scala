@@ -8,6 +8,7 @@ class PlayerTest extends FlatSpec with Matchers {
   val playerOne = new Player("john", "smith", "bigbadjohn", 0, 0)
 
   it should "make a new user" in {
+    playerOne.firstname shouldBe "john"
     assert("john" == playerOne.firstname)
   }
 
