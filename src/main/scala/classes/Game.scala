@@ -19,7 +19,6 @@ class Game(matches: List[Match], players: List[Player]) {
         tempMatch.getPlayerTwo.nickname,
         scala.io.StdIn.readLine()
       )
-
       println("Next match")
     })
     println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}")
