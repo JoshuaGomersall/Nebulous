@@ -28,8 +28,7 @@ class GameTest extends FlatSpec with Matchers{
   it should "run a tournament and does not return a unit" in {
     val userInut = new ByteArrayInputStream ("bigbadjohn".getBytes())
     Console.withIn(userInut) {
-      assert(isInstanceOf[Unit] != game.playTournament())
+      assert("Tournament over" == game.playTournament())
     }
   }
-
 }

@@ -1,1 +1,5 @@
-Player(john,smith,bigbdjohn,0,1)
+Player(b,b,b,4,1)
+Player(d,d,d,4,1)
+Player(c,c,c,3,2)
+Player(john,smith,bigbadjohn,0,0)
+Player(john,smith,bigbadjohn the second,0,0)
