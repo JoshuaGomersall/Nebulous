@@ -32,5 +32,29 @@ class LeaderBoardTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "entering 1 will display some information in the leaderboard menu then ask for a other option" in {
+    val inputs = "1\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == LeaderBoard.leaderBoardMenu)
+    }
+  }
+
+  it should "entering 2 will display some information in the leaderboard menu then ask for a other option" in {
+    val inputs = "2\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == LeaderBoard.leaderBoardMenu)
+    }
+  }
+
+  it should "entering 3 will display some information in the leaderboard menu then ask for a other option" in {
+    val inputs = "3\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == LeaderBoard.leaderBoardMenu)
+    }
+  }
+
 
 }
