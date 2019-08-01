@@ -24,5 +24,13 @@ class LeaderBoardTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "entering 5 will be invalid in the leaderboard menu" in {
+    val inputs = "5,\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == LeaderBoard.leaderBoardMenu)
+    }
+  }
+
 
 }

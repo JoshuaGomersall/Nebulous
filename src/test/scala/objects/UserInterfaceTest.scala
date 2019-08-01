@@ -48,5 +48,21 @@ class UserInterfaceTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "entering 5 will be invalid and ask for a new result in main menu" in {
+    val inputs = "5,\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == UserInterface.startMenu)
+    }
+  }
+
+  it should "entering 5 will be invalid and ask for a new result in crud menu" in {
+    val inputs = "5,\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == UserInterface.crudMenu)
+    }
+  }
+
 
 }
