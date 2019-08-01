@@ -36,7 +36,7 @@ object UserInterface {
   }
 
   @scala.annotation.tailrec
-  def crudMenu: Unit = {
+  def crudMenu: String = {
     println("Please input what would you like to do: \n" +
       "1 - Add Player\n" +
       "2 - Remove Player\n" +
@@ -54,6 +54,7 @@ object UserInterface {
         crudMenu
       case "4" =>
         println("Going back to the main menu")
+        "Bye"
       case _ =>
         println("Invalid input, try again")
         crudMenu
