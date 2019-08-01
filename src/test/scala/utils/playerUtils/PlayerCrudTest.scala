@@ -43,5 +43,4 @@ class PlayerCrudTest extends FlatSpec with Matchers {
     assert("List(Player(a,a,a,0,0), Player(b,b,b,0,0), Player(c,c,c,0,0), Player(d,d,d,0,0), Player(e,e,e,0,0), Player(john,smith,bigbdjohn,0,1))" == PlayerReadWrite.readPlayerList("file").toString() )
   }
 
-
 }

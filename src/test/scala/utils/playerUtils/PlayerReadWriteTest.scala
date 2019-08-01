@@ -6,7 +6,7 @@ import utils.playerUtils.PlayerReadWrite
 class PlayerReadWriteTest extends FlatSpec with Matchers {
 
   it should "write to the file" in {
-    assert( () == PlayerReadWrite.writePlayerList(List(),"file"))
+    assert(() == PlayerReadWrite.writePlayerList(List(),"file"))
   }
 
   it should "makes the player file" in {
