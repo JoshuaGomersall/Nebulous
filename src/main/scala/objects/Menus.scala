@@ -7,7 +7,7 @@ import classes.Game
 import objects.LeaderBoard._
 import utils.playerUtils.PlayerCrud._
 
-object Menu {
+object Menus {
 
   @scala.annotation.tailrec
   def startMenu: Unit = {

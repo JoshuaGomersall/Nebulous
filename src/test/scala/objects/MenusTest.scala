@@ -3,11 +3,11 @@ package objects
 import java.io.ByteArrayInputStream
 
 import org.scalatest._
-import Menu._
+import Menus._
 
 
 
-class MenuTest extends FlatSpec with Matchers {
+class MenusTest extends FlatSpec with Matchers {
 
   it should "compile the menu" in {
     assertCompiles("Menu.startMenu")
