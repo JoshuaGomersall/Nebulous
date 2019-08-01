@@ -1,7 +1,8 @@
 package classes
 import utils.playerUtils.PlayerCrud
 
-class Player(val firstname: String, val surname: String, val nickname: String, val allTimeWins: Int = 0, val allTimeLoses: Int = 0, val tournamentWins: Int = 0) {
+class Player(val firstname: String, val surname: String, val nickname: String,
+             val allTimeWins: Int = 0, val allTimeLoses: Int = 0, val tournamentWins: Int = 0) {
 
   val uniquieID: String = {
     this.firstname + this.surname + this.nickname
@@ -12,7 +13,7 @@ class Player(val firstname: String, val surname: String, val nickname: String, v
   }
   def giveWin()= {
     PlayerCrud.updatePlayer("file", new Player(this.firstname, this.surname, this.nickname,
-      this.allTimeWins +1, this.allTimeLoses, this.tournamentWins +1 ))
+      this.allTimeWins + 1, this.allTimeLoses, this.tournamentWins + 1 ))
   }
   def giveLose() = {
     PlayerCrud.updatePlayer("file", new Player(this.firstname, this.surname, this.nickname,
