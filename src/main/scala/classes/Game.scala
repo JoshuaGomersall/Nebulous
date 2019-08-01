@@ -23,7 +23,7 @@ class Game(matches: List[Match], players: List[Player]) {
       println("Next match")
     })
     println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}")
-    "Finished"
+    "Tournament over"
   }
 
 
