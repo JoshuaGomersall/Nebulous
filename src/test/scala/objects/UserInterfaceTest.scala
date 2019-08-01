@@ -30,4 +30,23 @@ class UserInterfaceTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "update or add a player from the inputs in the menu" in {
+    val inputs = "5\n2 \nTest\nTest2\nTestNick\n".getBytes()
+
+    val userInput = new ByteArrayInputStream(inputs)
+
+    Console.withIn(userInput) {
+      assert("Player(Test,Test2,TestNick,5,0)" == UserInterface.makePlayer(false).toString)
+    }
+  }
+
+  it should "win/loss should default to 0 if a string is entered" in {
+    val inputs = "String\n String\nTest\nTest2\nTest3\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Player(Test,Test2,Test3,0,0)" == UserInterface.makePlayer(false).toString)
+    }
+  }
+
+
 }
