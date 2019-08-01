@@ -8,9 +8,7 @@ import objects.LeaderBoard._
 import utils.playerUtils.PlayerCrud._
 
 object UserInterface {
-
-  @scala.annotation.tailrec
-  def startMenu: Unit = {
+  def startMenu: String = {
     println("Welcome to the Nebulous tournament! \n" +
       "Please choose what you would like to do: \n" +
       "1 - Set up a tournament\n" +
@@ -19,19 +17,22 @@ object UserInterface {
       "4 - Exit\n")
     scala.io.StdIn.readLine() match {
       case "1" =>
-        new Game(matchGeneration.toList, readPlayerList("file")).playTournament()
+        new Game(matchGeneration("file").toList, readPlayerList("file")).playTournament()
         println("The tournament is done!")
+        startMenu
       case "2" =>
         crudMenu
+        startMenu
       case "3" =>
         leaderBoardMenu
+        startMenu
       case "4" =>
         println("Bye")
-        System.exit(1)
+        "Bye"
       case _ =>
         println("Invalid input, try again")
+        startMenu
     }
-    startMenu
   }
 
   @scala.annotation.tailrec
