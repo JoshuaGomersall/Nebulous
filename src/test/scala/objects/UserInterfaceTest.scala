@@ -9,10 +9,6 @@ import UserInterface._
 
 class UserInterfaceTest extends FlatSpec with Matchers {
 
-  it should "compile the menu" in {
-    assertCompiles("Menu.startMenu")
-  }
-
   it should "exit on the user input of 4" in {
     val userInput = new ByteArrayInputStream ("4".getBytes())
     Console.withIn(userInput) {
