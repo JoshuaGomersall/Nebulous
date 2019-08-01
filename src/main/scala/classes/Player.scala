@@ -1,19 +1,22 @@
 package classes
+import utils.playerUtils.PlayerCrud
 
-class Player(val firstname: String, val surname: String, val nickname: String, var allTimeWins: Int = 0, var allTimeLoses: Int = 0, var tournamentWins: Int = 0) {
+class Player(val firstname: String, val surname: String, val nickname: String, val allTimeWins: Int = 0, val allTimeLoses: Int = 0, val tournamentWins: Int = 0) {
 
   val uniquieID: String = {
     this.firstname + this.surname + this.nickname
     }.reverse.replace(" ", "")
   def newTournamentStart() = {
-    tournamentWins = 0
+    PlayerCrud.updatePlayer("file", new Player(this.firstname, this.surname,
+      this.nickname, this.allTimeWins, this.allTimeLoses, 0))
   }
   def giveWin()= {
-    allTimeWins += 1
-    tournamentWins += 1
+    PlayerCrud.updatePlayer("file", new Player(this.firstname, this.surname, this.nickname,
+      this.allTimeWins +1, this.allTimeLoses, this.tournamentWins +1 ))
   }
   def giveLose() = {
-    allTimeLoses += 1
+    PlayerCrud.updatePlayer("file", new Player(this.firstname, this.surname, this.nickname,
+      this.allTimeWins, this.allTimeLoses + 1, this.tournamentWins))
   }
   def getTournamentWins(): Int = {
     tournamentWins

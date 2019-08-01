@@ -17,5 +17,11 @@ class GameTest extends FlatSpec with Matchers{
     val game = new Game(matches, playerList)
     assert(playerTwo == game.playMatch(matchOne, playerOne.nickname, playerTwo.nickname, winner="bigbadjohn the second"))
   }
+  it should "return game over when we run the tournament" in {
+    val matches = List[Match](matchOne)
+    val playerList = List[Player](playerOne, playerTwo)
+    val game = new Game(matches, playerList)
+    assert("Tournament over" == game.playTournament())
+  }
 
 }

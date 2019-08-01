@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 
 class Game(matches: List[Match], players: List[Player]) {
 
-  def playTournament(): Unit = {
+  def playTournament(): String = {
     val playerList = new ListBuffer[Player]()
     players.foreach(player => player.newTournamentStart())
     matches.foreach(tempMatch => {
@@ -23,6 +23,7 @@ class Game(matches: List[Match], players: List[Player]) {
       println("Next match")
     })
     println(s"The winner is ${playerList.toList.maxBy(player => player.tournamentWins).nickname}")
+    "Tournament over"
   }
 
 
