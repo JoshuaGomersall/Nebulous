@@ -48,6 +48,22 @@ class UserInterfaceTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "entering 2 will enter the player crud menu in main menu and allow you to exit back out of both" in {
+    val inputs = "2\n4\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == UserInterface.startMenu)
+    }
+  }
+
+  it should "entering 3 will enter the leaderboard menu in main menu and allow you to exit back out of both" in {
+    val inputs = "3\n4\n4\n".getBytes()
+    val userInput = new ByteArrayInputStream(inputs)
+    Console.withIn(userInput) {
+      assert("Bye" == UserInterface.startMenu)
+    }
+  }
+
   it should "entering 5 will be invalid and ask for a new result in main menu" in {
     val inputs = "5,\n4\n".getBytes()
     val userInput = new ByteArrayInputStream(inputs)
