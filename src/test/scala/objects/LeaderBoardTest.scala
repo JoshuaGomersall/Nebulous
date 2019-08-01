@@ -1,5 +1,7 @@
 package objects
 
+import java.io.ByteArrayInputStream
+
 import classes.Player
 import org.scalatest._
 
@@ -15,7 +17,12 @@ class LeaderBoardTest extends FlatSpec with Matchers {
     assert( "" != LeaderBoard.printSimpleResult(List(john)))
   }
 
-
+  it should "displays the leaderboard menu and exits from it" in {
+    val userInput = new ByteArrayInputStream ("4".getBytes())
+    Console.withIn(userInput) {
+      assert("Bye" == LeaderBoard.leaderBoardMenu)
+    }
+  }
 
 
 }
