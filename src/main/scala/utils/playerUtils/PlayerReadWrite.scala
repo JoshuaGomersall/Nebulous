@@ -7,7 +7,7 @@ import scala.io.Source
 
 object PlayerReadWrite {
 
-  def initialisePlayerFile(file: String) ={
+  def initialisePlayerFile(file: String) :String ={
     val testList = List(
       new Player("a","a","a" ),
       new Player("b","b","b" ),
@@ -16,15 +16,17 @@ object PlayerReadWrite {
       new Player("e","e","e" )
     )
     writePlayerList(testList, file)
+    "file made"
   }
 
-  def writePlayerList(playerList: List[Player], path: String): Unit ={
+  def writePlayerList(playerList: List[Player], path: String): String ={
     val playerFile = new File(path)
     val playerWriter = new PrintWriter(playerFile)
     playerList.foreach(player => {
       playerWriter.write(player.toString + "\n")
     })
     playerWriter.close()
+    "writting done"
   }
 
   def readPlayerList(path: String): List[Player] ={

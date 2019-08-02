@@ -6,7 +6,7 @@ import utils.playerUtils.PlayerReadWrite.readPlayerList
 
 object LeaderBoard {
 
-  def leaderBoardMenu: Unit = {
+  def leaderBoardMenu: String = {
     println("Welcome to the LeaderBoard \n" +
       "Please choose what you would like to do: \n" +
       "1 - View Best Ratio\n" +
@@ -28,6 +28,7 @@ object LeaderBoard {
         leaderBoardMenu
       case "4" =>
         println("You exited the LeaderBoard\n")
+        "Bye"
       case _ =>
         println("Invalid input, try again")
         leaderBoardMenu
